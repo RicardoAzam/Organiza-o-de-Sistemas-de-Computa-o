@@ -44,6 +44,12 @@ endm
     MSG7 DB 'Parabens! Voce acertou um alvo! $' 
     MSG8 DB 'Sinto muito, voce nao acertou nenhum alvo $'
     MSG9 DB 'Digite a coordena em letra da COLUNA que deseja atacar: $'
+<<<<<<< HEAD
+=======
+    MSG6 DB 'Digite a posicao que deseja atacar: $'  
+    MSG7 DB 'Parabens! Voce acertou um alvo! $' 
+    MSG8 DB 'Sinto muito, voce nao acertou nenhum alvo $'
+>>>>>>> e728e25aedd9db14d664630ddf2a0b73fe440fb8
     MWW1 DB   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0    ;MWW1 = MATRIZ WORLD WAR 1  
          DB   0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0    ;POSICAO DO HIDROAVIAO (1,17 - 1,19 E 2,18)
          DB   0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -226,4 +232,8 @@ G2 ENDP
 G3 PROC
 RET
 G3 ENDP
+<<<<<<< HEAD
+=======
+
+>>>>>>> e728e25aedd9db14d664630ddf2a0b73fe440fb8
 END MAIN
