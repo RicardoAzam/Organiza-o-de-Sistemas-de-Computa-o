@@ -11,7 +11,9 @@ PULA MACRO ;MACRO PARA PULAR LINHA
     POP AX ;RETORNAR VALORES DESEJADOS PARA AX
 endm
 .DATA
-    MWW1 DB   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,6,1,6    ;MWW1 = MATRIZ WORLD WAR 1  
+    msga db 'acertou $'
+    msge db 'errou $'
+    MWW1 DB   0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0    ;MWW1 = MATRIZ WORLD WAR 1  
          DB   5,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0    ;POSICAO DO HIDROAVIAO (1,17 - 1,19 E 2,18)
          DB   0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
          DB   0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -36,6 +38,7 @@ MAIN PROC
     MOV AX,@DATA
     MOV DS,AX
 
+    ;msg para pedir linha - pula
     MOV AH,01
     INT 21h
     xor cx,cx
@@ -51,12 +54,13 @@ MAIN PROC
     mov bx,cx
     xor dx,dx
     xor si,si
+    
     mov ah,02
-
     mov dl, MWW1[bx][si]
     or dl, 30h
     int 21h
     PULA
+    ;msg para pedi coluna - pula
     mov ah,01
     int 21h
     mov dl,41h
@@ -71,12 +75,25 @@ MAIN PROC
     mov si,cx
     xor dx,dx
     xor bx,bx
+    
     mov ah,02
-
     mov dl, MWW1[bx][si]
     or dl, 30h
     int 21h
+    ;PULA
+    ;cmp MWW1 [BX][SI],1
+    ;je acerto
+    ;mov ah,09
+    ;lea dx,msge
+    ;int 21h
+    ;JMP FIM
 
+    ;acerto:
+    ;mov ah,09
+    ;lea dx,msga
+   ; int 21h
+
+    FIM:
     mov ah,4CH
     int 21h
 main ENDP

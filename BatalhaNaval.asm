@@ -40,16 +40,10 @@ endm
     MSG3 DB '1.Primeira Guerra Mundial $'
     MSG4 DB '2.Segunda Guerra Mundial $'
     MSG5 DB '3.Guerra Moderna $'
-<<<<<<< HEAD
     MSG6 DB 'Digite a coordena em letra da LINHA que deseja atacar: $'  
     MSG7 DB 'Parabens! Voce acertou um alvo! $' 
     MSG8 DB 'Sinto muito, voce nao acertou nenhum alvo $'
     MSG9 DB 'Digite a coordena em letra da COLUNA que deseja atacar: $'
-=======
-    MSG6 DB 'Digite a posicao que deseja atacar: $'  
-    MSG7 DB 'Parabens! Voce acertou um alvo! $' 
-    MSG8 DB 'Sinto muito, voce nao acertou nenhum alvo $'
->>>>>>> ba4069fd9c7ec4586c819040354e37adea930182
     MWW1 DB   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0    ;MWW1 = MATRIZ WORLD WAR 1  
          DB   0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0    ;POSICAO DO HIDROAVIAO (1,17 - 1,19 E 2,18)
          DB   0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -211,7 +205,6 @@ L2:
     RET                       ;RETORNA AO PROGRAMA PRINCIPAL
 IMPRIME ENDP                  ;FINALIZA PROCEDIMENTO
 G1 PROC
-<<<<<<< HEAD
     PULA
     CALL IMPRIME
     LEA DX,MSG6
@@ -225,8 +218,6 @@ G1 PROC
     MOV AH,01
     INT 21H
 
-=======
->>>>>>> ba4069fd9c7ec4586c819040354e37adea930182
 RET
 G1 ENDP
 G2 PROC
@@ -235,9 +226,4 @@ G2 ENDP
 G3 PROC
 RET
 G3 ENDP
-<<<<<<< HEAD
 END MAIN
-=======
-END MAIN
-
->>>>>>> ba4069fd9c7ec4586c819040354e37adea930182
